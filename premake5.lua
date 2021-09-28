@@ -24,6 +24,7 @@ include "Sandbox"
 group "Dependencies"
 	include "Sandbox/vendor/GLFW"
 	include "Sandbox/vendor/imgui"
+	include "Sandbox/vendor/glad"
 group ""
 	  
 	

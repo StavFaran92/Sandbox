@@ -1,6 +1,7 @@
 IncludeDir = {}
 IncludeDir["GLFW"] = "%{prj.location}/vendor/glfw/include/GLFW"
 IncludeDir["ImGui"] = "%{prj.location}/vendor/ImGui"
+IncludeDir["glad"] = "%{prj.location}/vendor/glad/include"
 
 project "Sandbox"
     kind "ConsoleApp"
@@ -19,12 +20,20 @@ project "Sandbox"
 	{
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glad}"
 	}
 	
 	links
 	{
 		"GLFW",
-		"ImGui"
+		"ImGui",
+		"glad"
+	}
+	
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
 	}
    
 	filter {"system:windows", "action:vs*"}
